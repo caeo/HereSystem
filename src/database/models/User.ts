@@ -4,14 +4,18 @@ import {
   Model,
   DataType,
   PrimaryKey,
+  ForeignKey,
   Default,
   CreatedAt,
   UpdatedAt,
+  BelongsTo,
 } from 'sequelize-typescript';
 
 import { UUIDV4 } from 'sequelize';
 
 import { UserRole } from '../../types/UserRole';
+
+import Organization from './Organization';
 
 @Table({
   tableName: 'users',
@@ -40,6 +44,16 @@ class User extends Model {
     allowNull: false,
   })
   declare role: UserRole;
+
+  @ForeignKey(() => Organization)
+  @Column({
+    type: DataType.UUID,
+    allowNull: false,
+  })
+  declare organizationId: string;
+
+  @BelongsTo(() => Organization)
+  declare organization: Organization;
 
   @CreatedAt
   declare createdAt: Date;
