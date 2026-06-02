@@ -31,6 +31,13 @@ class User extends Model {
     allowNull: false,
     unique: true,
   })
+  declare name: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: false,
+    unique: true,
+  })
   declare email: string;
 
   @Column({
