@@ -1,6 +1,6 @@
 import Organization from '../database/models/Organization';
 
-class UserRepository {
+class OrganizationRepository {
   async findByPk(id: string) {
     return Organization.findByPk(id);
   }
@@ -10,4 +10,4 @@ class UserRepository {
   }
 }
 
-export default new UserRepository();
+export default new OrganizationRepository();

@@ -2,9 +2,15 @@ import User from '../database/models/User';
 
 class UserRepository {
   async findByEmail(email: string) {
-    return User.findOne({
+    console.log('Searching:', email);
+
+    const result = await User.findOne({
       where: { email },
     });
+
+    console.log(result);
+
+    return result;
   }
 
   async create(data: {

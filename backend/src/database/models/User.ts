@@ -19,6 +19,7 @@ import Organization from './Organization';
 
 @Table({
   tableName: 'users',
+  underscored: true,
 })
 class User extends Model {
   @PrimaryKey

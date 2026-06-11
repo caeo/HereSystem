@@ -1,9 +1,9 @@
 import { Router } from 'express';
 import authRoutes from './AuthRoutes';
 
-const router = Router();
+const routes = Router();
 
 // router.use('rota', controller)
-router.use('/auth', authRoutes);
+routes.use('/auth', authRoutes);
 
-export default router;
+export default routes

@@ -8,13 +8,13 @@ import {
   CreatedAt,
   UpdatedAt,
   HasMany,
-  AllowNull,
 } from 'sequelize-typescript';
 import { UUIDV4 } from 'sequelize';
 import User from './User';
 
 @Table({
   tableName: 'organizations',
+  underscored: true,
 })
 class Organization extends Model {
   @PrimaryKey
@@ -39,7 +39,7 @@ class Organization extends Model {
   declare users: User[];
 
   @CreatedAt
-  declare createAt: Date;
+  declare createdAt: Date;
 
   @UpdatedAt
   declare updatedAt: Date;
